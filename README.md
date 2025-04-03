@@ -1,1 +1,1 @@
-# portfolio-sebareibold
+Es un proyecto Next.js 15 con React 19, TypeScript, Tailwind CSS y ESLint, optimizado con Turbopack. 🚀
