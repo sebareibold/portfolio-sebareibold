@@ -6,7 +6,7 @@ Este es mi portafolio personal, desarrollado con **Next.js**, donde muestro mis 
 - **Next.js**  
 - **React.js**  
 - **Tailwind CSS**  
-- **Framer Motion** (para animaciones)  
+- **Framer Motion** 
 - **TypeScript** 
 
 ## ✨ Características  
