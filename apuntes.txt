@@ -1,0 +1,13 @@
+Ver dependencias y versiones instaladas:        
+
+        npm list --depth=0
+
+
+Ver si hay actualizaciones disponibles:    
+
+         npm outdated
+
+
+Para actualizarlo:
+
+        npm update

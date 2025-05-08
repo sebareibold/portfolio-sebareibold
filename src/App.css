@@ -1,5 +1,7 @@
-
 #root {
+  --bg-color: #212121;
+  --text-main: #ffffff;
+
   background-color: #212121;
   margin: 0 auto;
   padding: 2rem;
