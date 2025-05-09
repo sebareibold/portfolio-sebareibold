@@ -17,7 +17,7 @@ export default function App() {
     };
   }, [scrolled]);
   
-  return <div className="bg-black text-white min-h-screen">
+  return <div className=" text-white min-h-screen">
       <Navbar scrolled={scrolled} />
       <main>
         <Hero />

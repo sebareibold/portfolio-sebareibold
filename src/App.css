@@ -1,8 +1,11 @@
 #root {
-  --bg-color: #212121;
-  --text-main: #ffffff;
+  --bg-color: #181818;
+  --bg-card-color: #212121;
+  --br-card-color: #363636;
+  --txt-pr-color: #ffffff;
+  --txt-sg-color: #ffffff;
 
-  background-color: #212121;
+  background-color: var( --bg-color);
   margin: 0 auto;
   padding: 2rem;
   text-align: center;

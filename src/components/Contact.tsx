@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MailIcon, PhoneIcon, MapPinIcon, SendIcon, GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon } from 'lucide-react';
 const Contact = () => {
-  return <section id="contacto" className="py-20 bg-black">
+  return <section id="contacto" className="py-20 ">
       <div className="container mx-auto px-4">
         <motion.div className="mb-12 text-center" initial={{
         opacity: 0,
