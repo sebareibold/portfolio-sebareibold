@@ -1,0 +1,18 @@
+.custom-navbar {
+  /*border: 1px solid;*/
+  width: 40%;
+  height: 3.5vh;
+  border-radius: 2rem;
+  border-color: var(--txt-pr-color);
+}
+
+.custom-text-navbar {
+  font-family: "Jost","Rubik", sans-serif;
+  font-size: 120%;
+  color: var(--txt-pr-color);
+  height: 4vh;
+}
+
+.custom-text-navbar:hover {
+  color: var(--txt-sg-color);
+}

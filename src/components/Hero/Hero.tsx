@@ -9,7 +9,7 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <motion.div
-          className="md:w-1/2"
+          className="md:w-1/2 flex flex-col items-center text-center"
           initial={{
             opacity: 0,
             x: -50,
@@ -24,7 +24,7 @@ const Hero = () => {
         >
           <AnimatedText
             text="Hola, Soy Sebastian Reibold"
-            className="text-2xl font-light"
+            className="text-2xl font-light" // text-center might be needed here too depending on AnimatedText implementation
             once
           />
           <AnimatedText
@@ -40,6 +40,7 @@ const Hero = () => {
             delay={0.4}
           />
 
+          {/* Button container */}
           <motion.div
             initial={{
               opacity: 0,

@@ -1,8 +1,8 @@
 #root {
-  --bg-color: #181818;
-  --bg-card-color: #212121;
+  --bg-color: #1a181b;
+  --bg-card-color: #252326;
   --br-card-color: #363636;
-  --txt-pr-color: #ffffff;
+  --txt-pr-color: #949494;
   --txt-sg-color: #ffffff;
 
   background-color: var( --bg-color);

@@ -58,6 +58,7 @@ const Services = () => {
           >
             <h3 className="text-2xl font-bold mb-6 ">Servicios brindados</h3>
           </motion.div>
+          
           <motion.div
             className="relative md:w-1/2 lg:w-2/4 h-full mt-10 md:mt-0"
             initial={{
@@ -77,29 +78,27 @@ const Services = () => {
             }}
           >
             <div className="relative rounded-xl   h-full  w-full max-w-lg mx-auto ">
-                <Swiper
-                  direction={"vertical"}
-                  slidesPerView={"auto"}
-                  freeMode={true}
-                  spaceBetween={30}
-                  //mousewheel={true}
-                  autoplay={{
-                    delay: 0, // O un valor pequeño si quieres una pausa entre repeticiones (raro para "continuo")
-                    disableOnInteraction: false, // El autoplay no se detiene si el usuario interactúa
-                    loop:true,
-                  }}
-                  speed={6500} 
-
-                  //pagination={{clickable: true,  }}
-                  modules={[Mousewheel, Pagination]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>Slide 1</SwiperSlide>
-                  <SwiperSlide>Slide 2</SwiperSlide>
-                  <SwiperSlide>Slide 3</SwiperSlide> 
-                  <SwiperSlide>Slide 4</SwiperSlide>
-   
-                </Swiper>
+              <Swiper
+                direction={"vertical"}
+                slidesPerView={"auto"}
+                freeMode={true}
+                spaceBetween={30}
+                //mousewheel={true}
+                autoplay={{
+                  delay: 0, // O un valor pequeño si quieres una pausa entre repeticiones (raro para "continuo")
+                  disableOnInteraction: false, // El autoplay no se detiene si el usuario interactúa
+                  loop: true,
+                }}
+                speed={6500}
+                //pagination={{clickable: true,  }}
+                modules={[Mousewheel, Pagination]}
+                className="mySwiper"
+              >
+                <SwiperSlide>Slide 1</SwiperSlide>
+                <SwiperSlide>Slide 2</SwiperSlide>
+                <SwiperSlide>Slide 3</SwiperSlide>
+                <SwiperSlide>Slide 4</SwiperSlide>
+              </Swiper>
             </div>
           </motion.div>
         </div>
