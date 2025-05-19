@@ -24,21 +24,54 @@ Módulos Usados: modules={[Mousewheel, Pagination]}
         del carrusel y el número total de diapositivas.Se importa el módulo Pagination y se añade a la lista modules. Luego, se configura la 
         paginación con la prop pagination={{ clickable: true, }}. La opción clickable: true hace que estos puntos de paginación sean interactivos, 
         permitiendo al usuario hacer clic en ellos para navegar directamente a una diapositiva específica.
+        
+        -Autoplay:Este módulo permite que Swiper se mueva automáticamente sin interacción del usuario.
+        Cómo se usa aquí: Se importa el módulo Autoplay y se añade a la lista modules. La configuración 
+        específica de cómo y cuándo se reproduce automáticamente se maneja a través de la prop autoplay. 
+
+        - FreeMode: Este módulo, junto con la prop freeMode={true}, desactiva el comportamiento 'snap' del 
+        Swiper, donde normalmente se bloquea en la diapositiva más cercana. Se importa el módulo FreeMode y se 
+        añade a la lista modules. La funcionalidad se activa con la prop freeMode={true}. Permite que el carrusel
+        se desplace libremente, deteniéndose donde la inercia (o el scroll manual) lo deje, similar al scroll nativo 
+        de una página. Esto es esencial para la sensación de movimiento continuo y no escalonado.
 
 Props Utilizados:
+    
+        - direction={"vertical"}: Sí, esto asegura que el carrusel se desplace hacia arriba y hacia abajo, no hacia los lados. 
+        Cumple con el requisito de ser vertical.
 
-        - direction={"vertical"}: Sí, esto asegura que el carrusel se desplace hacia arriba y hacia abajo, no hacia los lados. Cumple con el requisito 
-        de ser vertical.
+        - slidesPerView={'auto'}: Muestra tantas diapositivas como quepan en el contenedor, o partes de ellas. El tamaño de  
+        las diapositivas puede variar. Esto es flexible y permite ver varias diapositivas (o partes de ellas) al mismo tiempo 
+        en la vista vertical.
 
-        - slidesPerView={'auto'}: Muestra tantas diapositivas como quepan en el contenedor, o partes de ellas. Esto es flexible pero no directamente 
-        relacionado con la continuidad automática. Es bueno para carruseles donde las diapositivas tienen tamaños variables.
+        - freeMode={true}: Sí, esto es clave para una sensación de movimiento continuo manual (con mousewheel) y automático
+         (con autoplay configurado adecuadamente). Con freeMode, el carrusel no se "bloquea" en diapositivas específicas al 
+         detenerse el scroll o el autoplay, sino que se detiene donde suelta (en scroll manual) o se mueve fluidamente sin 
+         pausas (en autoplay con delay: 0).
 
-        - freeMode={true}: Sí, esto es clave para una sensación de movimiento continuo manual. Con freeMode, el carrusel no se "bloquea" en diapositivas 
-        específicas al detenerse el scroll, sino que se detiene donde sueltas, como un scroll nativo de una página. Esto contribuye a la sensación de 
-        continuidad al interactuar.
+        - spaceBetween={20}: Define el espacio en píxeles entre cada diapositiva. spaceBetween={20} significa que habrá 20
+        píxeles de espacio vertical entre cada SwiperSlide.
+
+        - loop={true}: Cuando loop={true}, el carrusel crea un bucle infinito de diapositivas. Al llegar al final visual 
+        (mostrando el principio) o al principio visual (mostrando el final), Swiper hace la transición de forma fluida 
+        para que parezca que el contenido se repite continuamente sin fin. Esto contribuye enormemente a la sensación 
+        de movimiento continuo y perpetuo.
+
+        - autoplay={{ delay: 0, disableOnInteraction: false }}: Esta prop configura el comportamiento del Autoplay.
+
+        - delay: 0: Establece el tiempo de espera entre transiciones automáticas en milisegundos. Un delay: 0 significa 
+        que no hay pausa en absoluto entre los movimientos automáticos. El carrusel no se detiene; se mueve constantemente.
+
+        - disableOnInteraction: false: Por defecto, Swiper detiene el autoplay si el usuario interactúa con el carrusel 
+        (ej. arrastrando, usando el mousewheel). disableOnInteraction: false anula este comportamiento, permitiendo que 
+        el autoplay continúe funcionando ininterrumpidamente incluso si el usuario interactúa manualmente. 
+
+        - speed={4300}: Controla la velocidad de la animación del carrusel en milisegundos. En combinación con autoplay, 
+        freeMode, loop, y delay: 0, este valor (4300) determina la velocidad general a la que el contenido se desplaza 
+        automáticamente de forma continua. Un valor alto como 4300 indica un movimiento automático relativamente lento 
+        y constante. Swiper calculará internamente cómo usar este speed con delay: 0 para mantener el movimiento fluido.
 
         - mousewheel={true}: Combinado con freeMode, esto permite un scroll manual fluido y continuo usando el ratón/trackpad.
-
 
 
 ========================= X ========================= 

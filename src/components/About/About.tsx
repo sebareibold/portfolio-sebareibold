@@ -90,23 +90,20 @@ const About = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-10">Sobre Mi</h2>
             <div className="space-y-4">
               <p className="text-lg text-gray-300">
-                Soy un desarrollador Full Stack apasionado por crear soluciones
-                tecnológicas innovadoras. Actualmente estoy estudiando Ciencias
-                de la Computación, donde estoy ampliando mis conocimientos en
-                algoritmos, estructuras de datos y fundamentos de programación.
+                Soy estudiante de 4º año (de 5) de Ciencias de la Computación en
+                Neuquén Capital. Mi formación académica abarca áreas clave como
+                arquitectura de computadoras, sistemas operativos, redes,
+                estructuras de datos e ingeniería de software.
               </p>
               <p className="text-lg text-gray-300">
-                Mi experiencia incluye el desarrollo de aplicaciones web y
-                móviles utilizando tecnologías modernas como React, Node.js, y
-                bases de datos SQL/NoSQL. Me encanta enfrentar nuevos desafíos y
-                aprender constantemente sobre las últimas tendencias en
-                desarrollo de software.
+                Paralelamente, me formo como Desarrollador Fullstack de manera
+                autodidacta y a través de cursos. En Frontend, he trabajado en
+                proyectos con tecnologías como React.js, React + Vite, Next.js y
+                Tailwind CSS. Actualmente, estoy profundizando en Backend con
+                NodeJS y Express, y cuento con experiencia previa en CMS como
+                Strapi.
               </p>
-              <p className="text-lg text-gray-300">
-                Cuando no estoy programando, disfruto de la fotografía, el
-                senderismo y participar en hackathons para conectar con otros
-                desarrolladores y poner a prueba mis habilidades.
-              </p>
+              <p className="text-lg text-gray-300"></p>
             </div>
           </motion.div>
         </div>

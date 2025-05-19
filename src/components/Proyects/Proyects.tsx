@@ -4,7 +4,7 @@ const projects = [{
   title: 'E-Commerce Platform',
   description: 'Plataforma completa de comercio electrónico con carrito de compras, procesamiento de pagos y panel de administración.',
   tags: ['React', 'Node.js', 'MongoDB'],
-  image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+  image: 'https://wallpapers.com/images/high/4k-minimalist-purple-mountains-s4lppaqo5zq49v0g.webp'
 }, {
   title: 'App de Gestión de Tareas',
   description: 'Aplicación móvil para la gestión de tareas personales con recordatorios y categorización.',
@@ -14,7 +14,7 @@ const projects = [{
   title: 'Dashboard Analítico',
   description: 'Panel de control interactivo para visualización de datos empresariales con gráficos personalizables.',
   tags: ['React', 'D3.js', 'Express'],
-  image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+  image: 'https://wallpapers.com/images/high/4k-minimalist-dystopia-skull-t5j8crpigz4c1ske.webp'
 }, {
   title: 'Sistema de Gestión de Inventario',
   description: 'Sistema completo para el seguimiento de inventario con escaneo de códigos de barras y alertas de stock.',
@@ -43,7 +43,7 @@ const Projects = () => {
           <h2 className="text-3xl sm:text-4xl font-bold">Proyectos</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => <motion.div key={index} className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden" initial={{
+          {projects.map((project, index) => <motion.div key={index} className="bg-[Var(--bg-card-color)] border border-gray-800 rounded-xl overflow-hidden" initial={{
           opacity: 0,
           y: 50
         }} whileInView={{
@@ -67,7 +67,7 @@ const Projects = () => {
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => <span key={tagIndex} className="px-3 py-1 bg-gray-800 text-sm rounded-full">
+                  {project.tags.map((tag, tagIndex) => <span key={tagIndex} className="px-3 py-1 bg-[var(--bg-second-card-color)] text-sm rounded-full">
                       {tag}
                     </span>)}
                 </div>

@@ -9,7 +9,7 @@ interface AnimatedTextProps {
 }
 const AnimatedText: React.FC<AnimatedTextProps> = ({
   text,
-  className = '',
+  className = 'custom-text-hero',
   once = false,
   delay = 0
 }) => {

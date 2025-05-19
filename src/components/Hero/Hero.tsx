@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedText from "./AnimatedText";
+import "./archivo.css";
 
 const Hero = () => {
   return (
@@ -24,18 +25,18 @@ const Hero = () => {
         >
           <AnimatedText
             text="Hola, Soy Sebastian Reibold"
-            className="text-2xl font-light" // text-center might be needed here too depending on AnimatedText implementation
+            className="text-2xl font-light custom-text-hero" // text-center might be needed here too depending on AnimatedText implementation
             once
           />
           <AnimatedText
             text="Computer Science Student"
-            className="text-4xl sm:text-5xl font-bold mt-2"
+            className="text-4xl sm:text-5xl custom-text-hero font-bold mt-2"
             once
             delay={0.2}
           />
           <AnimatedText
             text="Full Stack Developer"
-            className="text-xl sm:text-2xl text-gray-400 mt-2"
+            className="text-xl sm:text-2xl custom-text-hero text-gray-400 mt-2"
             once
             delay={0.4}
           />
@@ -56,7 +57,7 @@ const Hero = () => {
           >
             <a
               href="#contacto"
-              className="inline-block mt-8 px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300"
+              className="inline-block mt-8 px-8 py-3 bg-transparent border-2 custom-text-hero border-gray-400 text-white rounded-full hover:bg-gray-400 hover:text-black transition-all duration-300"
             >
               Descargar mi CV
             </a>

@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-//import { ChevronUpIcon, ChevronDownIcon } from "lucide-react";
 import "./arc.css";
 
 //Swiper
+import { Mousewheel, Pagination, Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-// import required modules
-import { Mousewheel, Pagination } from "swiper/modules";
+import "swiper/css/free-mode";
+import "swiper/css/autoplay";
 
 const services = [
   {
@@ -58,7 +58,7 @@ const Services = () => {
           >
             <h3 className="text-2xl font-bold mb-6 ">Servicios brindados</h3>
           </motion.div>
-          
+
           <motion.div
             className="relative md:w-1/2 lg:w-2/4 h-full mt-10 md:mt-0"
             initial={{
@@ -82,22 +82,30 @@ const Services = () => {
                 direction={"vertical"}
                 slidesPerView={"auto"}
                 freeMode={true}
-                spaceBetween={30}
-                //mousewheel={true}
+                spaceBetween={20}
+                loop={true}
                 autoplay={{
-                  delay: 0, // O un valor pequeño si quieres una pausa entre repeticiones (raro para "continuo")
-                  disableOnInteraction: false, // El autoplay no se detiene si el usuario interactúa
-                  loop: true,
+                  delay: 0,
+                  disableOnInteraction: false,
                 }}
-                speed={6500}
-                //pagination={{clickable: true,  }}
-                modules={[Mousewheel, Pagination]}
+                speed={4300}
+                mousewheel={true}
+                modules={[Mousewheel, Pagination, Autoplay, FreeMode]}
                 className="mySwiper"
               >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
+                {/* Slides */}
+                <SwiperSlide>
+                  <div className="custom-slide-servicio">Hola 1</div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="custom-slide-servicio">Hola 1</div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="custom-slide-servicio">Hola 1</div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="custom-slide-servicio">Hola 1</div>
+                </SwiperSlide>
               </Swiper>
             </div>
           </motion.div>
