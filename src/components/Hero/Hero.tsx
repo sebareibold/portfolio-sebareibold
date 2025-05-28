@@ -1,13 +1,12 @@
-import { motion } from "framer-motion";
-import AnimatedText from "./AnimatedText";
-import "./archivo.css";
+"use client"
+
+import { motion } from "framer-motion"
+import AnimatedText from "./AnimatedText"
+import "./archivo.css"
 
 const Hero = () => {
   return (
-    <section
-      id="inicio"
-      className="w-full h-screen flex items-center relative overflow-hidden"
-    >
+    <section id="inicio" className="w-full h-screen flex items-center relative overflow-hidden">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <motion.div
           className="md:w-1/2 flex flex-col items-center text-center"
@@ -23,14 +22,10 @@ const Hero = () => {
             duration: 0.8,
           }}
         >
-          <AnimatedText
-            text="Hola, Soy Sebastian Reibold"
-            className="text-2xl font-light custom-text-hero" // text-center might be needed here too depending on AnimatedText implementation
-            once
-          />
+          <AnimatedText text="Hola, Soy Sebastian Reibold" className="text-2xl font-light custom-text-hero" once />
           <AnimatedText
             text="Computer Science Student"
-            className="text-4xl sm:text-5xl custom-text-hero font-bold mt-2"
+            className="text-4xl sm:text-5xl custom-text-hero font-bold mt-2 gradient-text"
             once
             delay={0.2}
           />
@@ -41,7 +36,6 @@ const Hero = () => {
             delay={0.4}
           />
 
-          {/* Button container */}
           <motion.div
             initial={{
               opacity: 0,
@@ -55,10 +49,7 @@ const Hero = () => {
               delay: 0.8,
             }}
           >
-            <a
-              href="#contacto"
-              className="inline-block mt-8 px-8 py-3 bg-transparent border-2 custom-text-hero border-gray-400 text-white rounded-full hover:bg-gray-400 hover:text-black transition-all duration-300"
-            >
+            <a href="#contacto" className="inline-block mt-8 modern-button custom-text-hero">
               Descargar mi CV
             </a>
           </motion.div>
@@ -78,16 +69,9 @@ const Hero = () => {
             delay: 0.3,
           }}
         >
-          <div className="w-64 h-64 rounded-full border-4 border-white overflow-hidden">
-            {/* Placeholder for profile image */}
+          <div className="w-64 h-64 rounded-full glass-card overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
-              <svg
-                width="120"
-                height="120"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
                   stroke="white"
@@ -108,6 +92,6 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
-export default Hero;
+  )
+}
+export default Hero

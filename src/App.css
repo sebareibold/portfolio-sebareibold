@@ -1,13 +1,198 @@
 #root {
-  --bg-color: #1a181b;
-  --bg-card-color: #252326;
-  --bg-second-card-color: #3b393c;
-  --br-card-color: #363636;
-  --txt-pr-color: #949494;
+  --bg-color: #0a0a0a;
+  --bg-card-color: rgba(255, 255, 255, 0.08);
+  --bg-second-card-color: rgba(255, 255, 255, 0.12);
+  --br-card-color: rgba(255, 255, 255, 0.15);
+  --txt-pr-color: #6b7280;
   --txt-sg-color: #ffffff;
+  --accent-purple: #8b5cf6;
+  --accent-blue: #3b82f6;
+  --accent-pink: #ec4899;
+  --accent-orange: #f97316;
+  --dark-purple: #0f0728;
+  --medium-purple: #1a0b2e;
+  --light-purple: #2d1b69;
+  --bright-purple: #6b21a8;
 
-  background-color: var( --bg-color);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ultra dark gradient background */
+body {
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #111111 50%, #0a0a0a 75%, #000000 100%);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle animated background elements */
+.background-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent-purple), var(--accent-blue));
+  opacity: 0.02;
+  filter: blur(40px);
+  animation: float 25s infinite ease-in-out;
+}
+
+.floating-element:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  top: 5%;
+  left: 5%;
+  animation-delay: 0s;
+  opacity: 0.015;
+}
+
+.floating-element:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  right: 10%;
+  background: linear-gradient(45deg, var(--accent-pink), var(--accent-orange));
+  animation-delay: -8s;
+  opacity: 0.02;
+}
+
+.floating-element:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  bottom: 15%;
+  left: 15%;
+  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  animation-delay: -15s;
+  opacity: 0.018;
+}
+
+.floating-element:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  top: 25%;
+  right: 25%;
+  background: linear-gradient(45deg, var(--accent-orange), var(--accent-pink));
+  animation-delay: -20s;
+  opacity: 0.015;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-40px) rotate(120deg) scale(1.1);
+  }
+  66% {
+    transform: translateY(30px) rotate(240deg) scale(0.9);
+  }
+}
+
+/* Enhanced glass morphism with better contrast */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Secondary glass cards with more contrast */
+.glass-card-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+}
+
+/* Darker gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, var(--accent-purple), var(--accent-blue), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern button styles for dark theme */
+.modern-button {
+  background: linear-gradient(45deg, var(--accent-purple), var(--accent-blue));
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.modern-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Content sections with better spacing */
+main {
+  position: relative;
+  z-index: 10;
+  padding-top: 0;
+}
+
+/* Additional dark theme elements */
+.dark-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Subtle glow effects */
+.subtle-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+/* Remove old wave styles */
+.wave-background,
+.wave,
+.wave-1,
+.wave-2,
+.wave-3,
+.wave-4,
+.wave-5,
+.wave-6,
+.wave-layers,
+.wave-layer,
+.wave-layer-1,
+.wave-layer-2,
+.wave-layer-3,
+.wave-layer-4,
+.wave-layer-5,
+.wave-layer-6 {
+  display: none;
 }

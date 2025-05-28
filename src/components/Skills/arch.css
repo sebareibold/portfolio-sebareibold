@@ -12,20 +12,8 @@
   width: 100%;
   overflow: hidden;
   border-radius: 1rem;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .skills-track {
@@ -40,14 +28,14 @@
     transform: translateX(0);
   }
   100% {
-    /* Esta distancia debe ser ajustada según el ancho total de tus skills */
     transform: translateX(calc(-100% / 2));
   }
 }
 
 .skill-card {
-  background-color: var(--bg-second-card-color);
-  border: 1px solid #d1d5db; /* gray-300 */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 1rem;
   padding: 1rem 1.5rem;
   height: 8vh;
@@ -57,14 +45,15 @@
   justify-content: center;
   white-space: nowrap;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }
 
 .skill-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border-color: #9ca3af; /* gray-400 */
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .skill-content {
@@ -93,24 +82,11 @@
   color: var(--txt-sg-color);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .skills-carousel-wrapper {
     width: 90%;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 20%,
-      black 80%,
-      transparent
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 20%,
-      black 80%,
-      transparent
-    );
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   }
 
   .skill-card {

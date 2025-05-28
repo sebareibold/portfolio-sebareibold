@@ -1,80 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-const projects = [{
-  title: 'E-Commerce Platform',
-  description: 'Plataforma completa de comercio electrónico con carrito de compras, procesamiento de pagos y panel de administración.',
-  tags: ['React', 'Node.js', 'MongoDB'],
-  image: 'https://wallpapers.com/images/high/4k-minimalist-purple-mountains-s4lppaqo5zq49v0g.webp'
-}, {
-  title: 'App de Gestión de Tareas',
-  description: 'Aplicación móvil para la gestión de tareas personales con recordatorios y categorización.',
-  tags: ['React Native', 'Firebase'],
-  image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
-}, {
-  title: 'Dashboard Analítico',
-  description: 'Panel de control interactivo para visualización de datos empresariales con gráficos personalizables.',
-  tags: ['React', 'D3.js', 'Express'],
-  image: 'https://wallpapers.com/images/high/4k-minimalist-dystopia-skull-t5j8crpigz4c1ske.webp'
-}, {
-  title: 'Sistema de Gestión de Inventario',
-  description: 'Sistema completo para el seguimiento de inventario con escaneo de códigos de barras y alertas de stock.',
-  tags: ['React', 'Node.js', 'PostgreSQL'],
-  image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
-}, {
-  title: 'Plataforma de Aprendizaje',
-  description: 'LMS con cursos, evaluaciones y seguimiento del progreso del estudiante.',
-  tags: ['React', 'MongoDB', 'Express'],
-  image: 'https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
-}];
-const Projects = () => {
-  return <section id="proyectos" className="py-20 ">
-      <div className="container mx-auto px-4">
-        <motion.div className="mb-12 text-center" initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }}>
-          <h2 className="text-3xl sm:text-4xl font-bold">Proyectos</h2>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => <motion.div key={index} className="bg-[Var(--bg-card-color)] border border-gray-800 rounded-xl overflow-hidden" initial={{
-          opacity: 0,
-          y: 50
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }} whileHover={{
-          y: -10,
-          transition: {
-            duration: 0.3
-          }
-        }}>
-              <div className="h-48 overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+import type React from "react"
+
+interface Project {
+  title: string
+  description: string
+  image: string
+  tags: string[]
+}
+
+const Projects: React.FC = () => {
+  const projects: Project[] = [
+    {
+      title: "Project 1",
+      description:
+        "A brief description of project 1. This project was about solving a complex problem using innovative techniques.",
+      image: "./fondo.jpg",
+      tags: ["React", "Node.js", "Express", "MongoDB"],
+    },
+    {
+      title: "Project 2",
+      description:
+        "A brief description of project 2. This project focused on creating a user-friendly interface for a data-intensive application.",
+      image: "./fondo.jpg",
+      tags: ["Python", "Django", "PostgreSQL"],
+    },
+    {
+      title: "Project 3",
+      description:
+        "A brief description of project 3. The main goal was to develop a scalable and reliable system for processing large amounts of data in real-time.",
+      image: "./fondo.jpg",
+      tags: ["Java", "Spring Boot", "MySQL", "AWS"],
+    },
+    {
+      title: "Project 4",
+      description:
+        "A brief description of project 4. This project involved building a mobile application with a focus on performance and user experience.",
+      image: "./fondo.jpg",
+      tags: ["React Native", "Firebase"],
+    },
+  ]
+
+  return (
+    <section id="projects" className="py-12">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-semibold mb-8 gradient-text">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="glass-card overflow-hidden h-96 w-full flex flex-col hover:transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="h-48 overflow-hidden flex-shrink-0">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => <span key={tagIndex} className="px-3 py-1 bg-[var(--bg-second-card-color)] text-sm rounded-full">
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-2 line-clamp-2">{project.title}</h3>
+                  <p className="text-gray-400 mb-4 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="px-3 py-1 glass-card-secondary text-sm rounded-full text-white">
                       {tag}
-                    </span>)}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </motion.div>)}
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
-};
-export default Projects;
+    </section>
+  )
+}
+
+export default Projects
