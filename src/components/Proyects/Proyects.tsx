@@ -40,30 +40,35 @@ const Projects: React.FC = () => {
   ]
 
   return (
-    <section id="projects" className="py-12">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-semibold mb-8 gradient-text">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 gradient-text">Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="glass-card overflow-hidden h-96 w-full flex flex-col hover:transform hover:scale-105 transition-all duration-300"
+              className="glass-card overflow-hidden h-80 sm:h-96 w-full flex flex-col hover:transform hover:scale-105 transition-all duration-300"
             >
-              <div className="h-48 overflow-hidden flex-shrink-0">
+              <div className="h-32 sm:h-48 overflow-hidden flex-shrink-0">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold mb-2 line-clamp-2">{project.title}</h3>
-                  <p className="text-gray-400 mb-4 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 line-clamp-2">{project.title}</h3>
+                  <p className="text-gray-400 mb-3 sm:mb-4 line-clamp-3 text-xs sm:text-sm leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-auto">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="px-3 py-1 glass-card-secondary text-sm rounded-full text-white">
+                    <span
+                      key={tagIndex}
+                      className="px-2 sm:px-3 py-1 glass-card-secondary text-xs sm:text-sm rounded-full text-white"
+                    >
                       {tag}
                     </span>
                   ))}

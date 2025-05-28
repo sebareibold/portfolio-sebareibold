@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import AnimatedText from "./AnimatedText"
-import "./archivo.css"
+import { motion } from "framer-motion";
+import AnimatedText from "./AnimatedText";
+import "./Hero.css";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="w-full h-screen flex items-center relative overflow-hidden">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    <section
+      id="inicio"
+      className="w-full min-h-screen flex items-center relative overflow-hidden px-4 sm:px-6 lg:px-8"
+    >
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
         <motion.div
-          className="md:w-1/2 flex flex-col items-center text-center"
+          className="w-full lg:w-1/2 flex flex-col items-center text-center order-2 lg:order-1"
           initial={{
             opacity: 0,
             x: -50,
@@ -22,19 +25,25 @@ const Hero = () => {
             duration: 0.8,
           }}
         >
-          <AnimatedText text="Hola, Soy Sebastian Reibold" className="text-2xl font-light custom-text-hero" once />
-          <AnimatedText
-            text="Computer Science Student"
-            className="text-4xl sm:text-5xl custom-text-hero font-bold mt-2 gradient-text"
-            once
-            delay={0.2}
-          />
-          <AnimatedText
-            text="Full Stack Developer"
-            className="text-xl sm:text-2xl custom-text-hero text-gray-400 mt-2"
-            once
-            delay={0.4}
-          />
+          <div className="space-y-2 sm:space-y-4">
+            <AnimatedText
+              text="Hola, Soy Sebastian Reibold"
+              className="text-lg sm:text-xl lg:text-2xl font-light custom-text-hero"
+              once
+            />
+            <AnimatedText
+              text="Computer Science Student"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl custom-text-hero font-bold gradient-text"
+              once
+              delay={0.2}
+            />
+            <AnimatedText
+              text="Full Stack Developer"
+              className="text-lg sm:text-xl lg:text-2xl custom-text-hero text-gray-400"
+              once
+              delay={0.4}
+            />
+          </div>
 
           <motion.div
             initial={{
@@ -48,14 +57,19 @@ const Hero = () => {
             transition={{
               delay: 0.8,
             }}
+            className="mt-6 sm:mt-8"
           >
-            <a href="#contacto" className="inline-block mt-8 modern-button custom-text-hero">
+            <a
+              href="#contacto"
+              className="inline-block modern-button custom-text-hero text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
+            >
               Descargar mi CV
             </a>
           </motion.div>
         </motion.div>
+
         <motion.div
-          className="md:w-1/2 flex justify-center mt-10 md:mt-0"
+          className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2"
           initial={{
             opacity: 0,
             scale: 0.8,
@@ -69,29 +83,19 @@ const Hero = () => {
             delay: 0.3,
           }}
         >
-          <div className="w-64 h-64 rounded-full glass-card overflow-hidden">
+          <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-110 lg:h-110 rounded-full glass-card overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
-              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M6 21V19C6 17.9391 6.42143 16.9217 7.17157 16.1716C7.92172 15.4214 8.93913 15 10 15H14C15.0609 15 16.0783 15.4214 16.8284 16.1716C17.5786 16.9217 18 17.9391 18 19V21"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img
+                src="perfillinkd.png"
+                alt="Perfil"
+                className="object-cover w-full h-full"
+              />
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
-}
-export default Hero
+  );
+};
+
+export default Hero;

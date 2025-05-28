@@ -1,43 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import "./App.css";
-import { Navbar, Hero, About, Services, Skills, Proyects, Contact  } from './components/index'; 
+"use client"
+
+import { useEffect, useState } from "react"
+import "./App.css"
+import { Navbar, Hero, About, Services, Skills, Proyects, Contact } from "./components/index"
 
 export default function App() {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollLevel, setScrollLevel] = useState(0);
-  
+  const [scrolled, setScrolled] = useState(false)
+
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
+      const isScrolled = window.scrollY > 10
       if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+        setScrolled(isScrolled)
       }
+    }
 
-      // Calcular nivel de scroll más simple
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const level = Math.floor(scrollPosition / windowHeight);
-      setScrollLevel(Math.min(level, 4));
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
-  
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [scrolled])
+
   return (
     <div className="text-white min-h-screen">
-      {/* Capas onduladas */}
-      <div className={`wave-layers scroll-${scrollLevel}`}>
-        <div className="wave-layer wave-layer-1"></div>
-        <div className="wave-layer wave-layer-2"></div>
-        <div className="wave-layer wave-layer-3"></div>
-        <div className="wave-layer wave-layer-4"></div>
-        <div className="wave-layer wave-layer-5"></div>
-        <div className="wave-layer wave-layer-6"></div>
+      {/* Geometric abstract background */}
+      <div className="geometric-background">
+        {/* Large fluid shapes */}
+        <div className="fluid-shape fluid-shape-1"></div>
+        <div className="fluid-shape fluid-shape-2"></div>
+        <div className="fluid-shape fluid-shape-3"></div>
+
+        {/* Accent shapes */}
+        <div className="accent-shape accent-shape-1"></div>
+        <div className="accent-shape accent-shape-2"></div>
+        <div className="accent-shape accent-shape-3"></div>
+
+        {/* Geometric lines */}
+        <div className="geometric-lines">
+          <div className="geo-line geo-line-1"></div>
+          <div className="geo-line geo-line-2"></div>
+          <div className="geo-line geo-line-3"></div>
+        </div>
+
+        {/* Subtle grid overlay */}
+        <div className="subtle-grid"></div>
       </div>
-      
+
       <Navbar scrolled={scrolled} />
       <main>
         <Hero />
@@ -48,5 +56,5 @@ export default function App() {
         <Contact />
       </main>
     </div>
-  );
+  )
 }

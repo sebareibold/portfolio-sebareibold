@@ -8,9 +8,21 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+@media (min-width: 640px) {
+  .custom-navbar {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-navbar {
+    width: 40%;
+  }
+}
+
 .custom-text-navbar {
   font-family: "Jost", "Rubik", sans-serif;
-  font-size: 120%;
+  font-size: 100%;
   color: var(--txt-pr-color);
   height: 4vh;
   transition: all 0.3s ease;
@@ -19,4 +31,10 @@
 .custom-text-navbar:hover {
   color: var(--txt-sg-color);
   text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+@media (min-width: 640px) {
+  .custom-text-navbar {
+    font-size: 120%;
+  }
 }
