@@ -42,7 +42,7 @@ const Contact = () => {
             duration: 0.5,
           }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-4">Contacto</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold  mb-4 text-[#c5c5c5] ">Contacto</h2>
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -54,7 +54,7 @@ const Contact = () => {
                 className="lg:w-1/3 bg-[#c5c5c5] p-8 lg:p-12 relative rounded-2xl"
                 initial={{
                   opacity: 0,
-                  x: -50,
+                  x: -20,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -131,7 +131,7 @@ const Contact = () => {
 
               {/* Right dark section */}
               <motion.div
-                className="lg:w-2/3  p-8 lg:p-12 rounded-2xl"
+                className="lg:w-2/3  p-8 lg:p-12 rounded-2xl border-[#c5c5c5] "
                 initial={{
                   opacity: 0,
                   x: 50,
@@ -158,7 +158,7 @@ const Contact = () => {
                         <input
                           type="text"
                           id="name"
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-gray-600 rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 text-white text-sm"
+                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#c5c5c5] rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 text-white text-sm"
                           placeholder="Nombre completo"
                         />
                       </div>
@@ -169,7 +169,7 @@ const Contact = () => {
                         <input
                           type="email"
                           id="email"
-                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-gray-600 rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 text-white text-sm"
+                          className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#c5c5c5] rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 text-white text-sm"
                           placeholder="example@email.com"
                         />
                       </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                       <input
                         type="text"
                         id="subject"
-                        className="w-full px-4 py-3 bg-[#2a2a2a] border border-gray-600 rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 text-white text-sm"
+                        className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#c5c5c5] rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 text-white text-sm"
                         placeholder="¿En qué puedo ayudarte?"
                       />
                     </div>
@@ -194,7 +194,7 @@ const Contact = () => {
                       <textarea
                         id="message"
                         rows={4}
-                        className="w-full px-4 py-3 bg-[#2a2a2a] border border-gray-600 rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 resize-none text-white text-sm"
+                        className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#c5c5c5]  rounded-lg focus:outline-none focus:border-gray-400 transition-all duration-300 resize-none text-white text-sm"
                         placeholder="Comentame . . . "
                       ></textarea>
                     </div>
