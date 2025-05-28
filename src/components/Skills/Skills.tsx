@@ -1,28 +1,22 @@
 import { motion } from "framer-motion";
-
-//Swiper
-import { Mousewheel, Pagination, Autoplay, FreeMode } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import "swiper/css/autoplay";
-
 import "./arch.css";
 
 const Skills = () => {
   const mySkills = [
-    { lenguaje: "Java", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "JavaScript", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "C", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "Prolog", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "Html", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "Css", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "Typescript", icon: "/vite.svg", color: "#00000" },
-    { lenguaje: "Typescript", icon: "/vite.svg", color: "#00000" },
+    { lenguaje: "Java", icon: "/vite.svg" },
+    { lenguaje: "JavaScript", icon: "/vite.svg" },
+    { lenguaje: "C", icon: "/vite.svg" },
+    { lenguaje: "Prolog", icon: "/vite.svg" },
+    { lenguaje: "Html", icon: "/vite.svg" },
+    { lenguaje: "Css", icon: "/vite.svg" },
+    { lenguaje: "Typescript", icon: "/vite.svg" },
+    { lenguaje: "React", icon: "/vite.svg" },
+    { lenguaje: "Node.js", icon: "/vite.svg" },
+    { lenguaje: "Express", icon: "/vite.svg" },
   ];
+
   return (
-    <section className="py-20 ">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           className="mb-12 text-center" 
@@ -43,37 +37,39 @@ const Skills = () => {
         >
           <h2 className="text-3xl sm:text-4xl font-bold">Skills</h2>
         </motion.div>
-        <div className="">
-          <Swiper
-            direction={"horizontal"}
-            slidesPerView={"auto"}
-            freeMode={true}
-            spaceBetween={20}
-            loop={true}
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-            }}
-            speed={4300}
-            mousewheel={true}
-            modules={[Mousewheel, Pagination, Autoplay, FreeMode]}
-            className="mySwiper"
-          >
-            {/* Slides */}
-            {mySkills.map((skill) => (
-              <SwiperSlide className="custom-slide-skill">
-                <div className=" flex justify-around">
-                  <div className="custom-card-img">
-                    <img src={skill.icon} alt="Logo"></img>
+        
+        <div className="skills-carousel-container">
+          <div className="skills-carousel-wrapper">
+            <div className="skills-track">
+              {/* Primera copia de los skills */}
+              {mySkills.map((skill, index) => (
+                <div key={`a-${index}`} className="skill-card">
+                  <div className="skill-content">
+                    <div className="custom-card-img">
+                      <img src={skill.icon || "/placeholder.svg"} alt="Logo" />
+                    </div>
+                    <div className="skill-name">{skill.lenguaje}</div>
                   </div>
-                  <div className="ml-2"> {skill.lenguaje}</div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              ))}
+              
+              {/* Segunda copia para crear el efecto infinito */}
+              {mySkills.map((skill, index) => (
+                <div key={`b-${index}`} className="skill-card">
+                  <div className="skill-content">
+                    <div className="custom-card-img">
+                      <img src={skill.icon || "/placeholder.svg"} alt="Logo" />
+                    </div>
+                    <div className="skill-name">{skill.lenguaje}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
 export default Skills;
