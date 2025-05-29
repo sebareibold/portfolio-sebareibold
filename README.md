@@ -1,8 +1,6 @@
-# Portfolio Personal - Sebastian Reibold
+# Portfolio Personal - Sebastian Alejandro Reibold
 
-## 📋 Descripción del Proyecto
-
-Este es un portfolio personal moderno desarrollado para Sebastian Reibold, estudiante de Ciencias de la Computación y desarrollador Full Stack. El proyecto presenta un diseño elegante y futurista que combina técnicas avanzadas de CSS con animaciones fluidas para crear una experiencia de usuario excepcional.
+Este es un portfolio personal moderno, el proyecto presenta un diseño elegante y futurista que combina técnicas avanzadas de CSS con animaciones fluidas para crear una experiencia de usuario unica.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -16,8 +14,8 @@ Este es un portfolio personal moderno desarrollado para Sebastian Reibold, estud
 
 ## 🎨 Diseño y Estética
 
-### Neumorfismo (Soft UI)
-El proyecto implementa técnicas de **neumorfismo** o "Soft UI", un estilo de diseño que simula elementos físicos mediante:
+### Soft UI
+El proyecto implementa técnicas de  "Soft UI", un estilo de diseño que simula elementos físicos mediante:
 
 - **Sombras suaves**: Combinación de sombras claras y oscuras para crear profundidad
 - **Bordes sutiles**: Uso de bordes semi-transparentes para definir elementos
@@ -32,36 +30,12 @@ Complementando el neumorfismo, se utiliza **Glass Morphism** para crear efectos 
 - **Bordes luminosos**: Bordes sutiles que simulan reflejos de vidrio
 - **Efectos de profundidad**: Múltiples capas para crear sensación 3D
 
-## 🚀 Desarrollo con v0
+## 🔥 Desarrollo acelerado con Vercel v0 
+Este proyecto fue desarrollado con apoyo asistido de v0 de Vercel, una herramienta de IA que facilitó la generación y modificación de componentes especiales, implementación nativa de responsividad y producción de código acorde con estándares modernos.
 
-Este proyecto fue desarrollado utilizando **v0 de Vercel**, una herramienta de IA que acelera significativamente el proceso de desarrollo:
+Las ideas y la implementación fueron concebidas y supervisadas durante todo el proceso, mientras que la IA apoyó en la creación de componentes secundarios y optimizaciones bajo estricta revisión.
 
-### Ventajas de v0:
-- **Generación rápida de componentes**: Creación automática de componentes React complejos
-- **Diseño responsive automático**: Implementación nativa de responsividad
-- **Mejores prácticas**: Código que sigue estándares modernos de desarrollo
-- **Integración perfecta**: Compatibilidad total con el ecosistema de Vercel
-
-### Proceso de desarrollo:
-1. **Conceptualización**: Definición de requisitos y diseño visual
-2. **Generación con v0**: Creación de componentes base usando IA
-3. **Personalización**: Ajustes específicos y refinamiento del diseño
-4. **Optimización**: Mejoras de rendimiento y responsividad
-5. **Testing**: Pruebas en diferentes dispositivos y navegadores
-
-## 📱 Características Principales
-
-### Responsive Design
-- **Mobile First**: Diseño optimizado para dispositivos móviles
-- **Breakpoints adaptativos**: Ajustes específicos para tablet y desktop
-- **Componentes flexibles**: Elementos que se adaptan a cualquier pantalla
-
-### Animaciones Avanzadas
-- **Texto animado**: Efectos de aparición letra por letra
-- **Transiciones suaves**: Animaciones fluidas entre estados
-- **Efectos de hover**: Interacciones visuales atractivas
-- **Scroll animations**: Elementos que aparecen al hacer scroll
-
+El proceso de desarrollo incluyó fases de definición de requisitos y diseño visual, creación asistida de componentes, mejoras de rendimiento y pruebas en diversos dispositivos y navegadores.
 ### Secciones del Portfolio
 1. **Hero**: Presentación principal con animaciones de texto
 2. **About**: Información personal y académica
@@ -70,51 +44,34 @@ Este proyecto fue desarrollado utilizando **v0 de Vercel**, una herramienta de I
 5. **Projects**: Galería de proyectos con efectos hover
 6. **Contact**: Formulario de contacto con slider de importancia
 
-## 🎯 Objetivos del Proyecto
-
-- **Profesionalidad**: Transmitir competencia técnica y creatividad
-- **Modernidad**: Utilizar las últimas tendencias en diseño web
-- **Usabilidad**: Garantizar una experiencia de usuario intuitiva
-- **Performance**: Optimizar velocidad de carga y fluidez
-- **Accesibilidad**: Asegurar compatibilidad con diferentes dispositivos
-
 ## 🔧 Instalación y Uso
 
-\`\`\`bash
-# Clonar el repositorio
-git clone [url-del-repositorio]
+### Clonar el repositorio
+```bash
+git clone https://github.com/sebareibold/portfolio-sebareibold
+```
 
-# Instalar dependencias
+### Instalar dependencias
+```bash
 npm install
+```
 
-# Ejecutar en desarrollo
+### Ejecutar en desarrollo
+```bash
 npm run dev
-
-# Build para producción
+```
+### Build para producción
+```bash
 npm run build
-\`\`\`
-
-## 📈 Futuras Mejoras
-
-- [ ] Implementación de modo oscuro/claro
-- [ ] Integración con CMS para gestión de contenido
-- [ ] Optimización SEO avanzada
-- [ ] Implementación de PWA
-- [ ] Análiticas de usuario
-- [ ] Formulario de contacto funcional
+```
 
 ## 👨‍💻 Autor
 
 **Sebastian Reibold**
 - Estudiante de Ciencias de la Computación (4º año)
-- Desarrollador Full Stack
-- Ubicación: Neuquén Capital, Argentina
 
-## 📄 Licencia
 
-Este proyecto es de uso personal y educativo. Todos los derechos reservados.
+## 📄 Estado en proyecto
 
----
-
-*Desarrollado con ❤️ usando v0 de Vercel y las mejores prácticas de desarrollo web moderno.*
+**En proceso**
 
