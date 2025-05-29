@@ -26,29 +26,24 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: "E-commerce Platform",
+      title: "E-commerce Web Obbware",
       description:
-        "Una plataforma de comercio electrónico completa con carrito de compras, pagos y gestión de inventario.",
+        "Una plataforma de comercio electrónico de software y hardware completa con carrito de compras, pagos y gestión de inventario.",
       longDescription:
         "Desarrollé una plataforma completa de e-commerce desde cero, implementando funcionalidades como autenticación de usuarios, carrito de compras persistente, integración con pasarelas de pago, panel de administración para gestión de productos y un sistema de notificaciones en tiempo real.",
-      image: "./fondo.jpg",
+      image: "./obbware.png",
       tags: ["React", "Node.js", "Express"],
       fullTechnologies: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Stripe API",
-        "JWT",
-        "Socket.io",
+        "ReactJs",
+        "Firebase",
         "Tailwind CSS",
-        "Redux Toolkit",
+        "Vite",
       ],
-      githubUrl: "https://github.com/usuario/ecommerce-platform",
-      liveUrl: "https://ecommerce-demo.vercel.app",
+      githubUrl: "https://github.com/sebareibold/e-commerce-obbware",
+      liveUrl: "https://e-commerce-obbware.vercel.app/",
     },
     {
-      title: "Task Management App",
+      title: "E-commerce Mobile App",
       description:
         "Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real y seguimiento de progreso.",
       longDescription:
@@ -56,57 +51,45 @@ const Projects: React.FC = () => {
       image: "./fondo.jpg",
       tags: ["Next.js", "PostgreSQL", "Prisma"],
       fullTechnologies: [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma",
-        "NextAuth.js",
-        "Pusher",
-        "Cloudinary",
-        "Vercel",
+        "React Native",
+        "Expo",
+        "Express",
+        "NodeJs",
       ],
-      githubUrl: "https://github.com/usuario/task-manager",
+      githubUrl: "https://github.com/sebareibold/e-commerce-practice-app",
       // No tiene liveUrl
     },
     {
-      title: "Weather Dashboard",
+      title: "Plataforma Web Gilia",
       description:
-        "Dashboard interactivo del clima con mapas, pronósticos y alertas meteorológicas personalizadas.",
+        "Este proyecto es una aplicación web creada para GILIA: Grupo de Investigación en Lenguajes e Inteligencia Artificial.",
       longDescription:
-        "Un dashboard completo del clima que integra múltiples APIs meteorológicas para proporcionar información detallada del tiempo, mapas interactivos, pronósticos extendidos y un sistema de alertas personalizables basado en condiciones específicas.",
+        "Este proyecto es una aplicación web creada para GILIA: Grupo de Investigación en Lenguajes e Inteligencia Artificial. El sitio web se construyó utilizando React y Vite para el frontend, mientras que el backend utiliza Node.js y Strapi.",
       image: "./fondo.jpg",
       tags: ["Vue.js", "Chart.js", "API"],
       fullTechnologies: [
-        "Vue.js",
-        "Vuex",
-        "Chart.js",
-        "Leaflet",
-        "OpenWeather API",
-        "Sass",
-        "PWA",
-        "Service Workers",
+        "ReactJs",
+        "Strapi",
+        "Vite",
+        "Tailwind CSS",
       ],
       githubUrl: "https://github.com/usuario/weather-dashboard",
       liveUrl: "https://weather-dashboard-demo.netlify.app",
     },
     {
-      title: "Social Media Analytics",
+      title: "LiveProducts API",
       description:
-        "Herramienta de análisis para redes sociales con métricas avanzadas y reportes automatizados.",
+        "Proyecto Backend con Node.js: API REST y Comunicación en Tiempo Real con Socket.IO",
       longDescription:
-        "Plataforma de análisis que conecta con múltiples redes sociales para recopilar métricas, generar insights automáticos y crear reportes personalizados. Incluye dashboard en tiempo real y sistema de alertas para cambios significativos en las métricas.",
-      image: "./fondo.jpg",
+        "Se construyó una API REST con el propósito de comprender a fondo los conceptos fundamentales de una arquitectura backend típica. Para ello, se implementó una estructura básica organizada por directorios, donde se distribuye la lógica correspondiente al ruteo, manejo de solicitudes y respuestas, así como la interacción con bases de datos simples o datos en memoria. Además, se incorporó un endpoint denominado realTimeProducts, que permite visualizar en tiempo real los productos disponibles. Cualquier adición, eliminación o modificación se refleja inmediatamente en la lista gracias a la integración de WebSockets, específicamente mediante la librería Socket.IO.",
+      image: "./gilia.png",
       tags: ["Python", "Django", "D3.js"],
       fullTechnologies: [
-        "Python",
-        "Django",
-        "PostgreSQL",
-        "Redis",
-        "Celery",
-        "D3.js",
-        "Docker",
-        "AWS S3",
-        "Social Media APIs",
+        "Express",
+        "NodeJs",
+        "MongoDB",
+        "Postman",
+        "Websockets",
       ],
       githubUrl: "https://github.com/usuario/social-analytics",
       // No tiene liveUrl
@@ -117,16 +100,6 @@ const Projects: React.FC = () => {
     setExpandedProject(expandedProject === index ? null : index);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
 
   const titleVariants = {
     hidden: { opacity: 0, y: -30 },
