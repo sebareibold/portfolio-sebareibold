@@ -1,0 +1,11 @@
+.glass-card-about {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(var(--glass-card-blur));
+  border-radius: var(--glass-card-border-radius);
+  transition: var(--glass-card-transition);
+  box-shadow: var(--glass-card-secondary-shadow);
+}
+
+.glass-card-about:hover {
+  background: var(--glass-card-bg-hover);
+}

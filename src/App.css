@@ -156,7 +156,7 @@ main {
   width: 400px;
   height: 400px;
   bottom: 20%;
-  left: -5%;
+  left: -15%;
   /* Usamos solo blancos y un azul claro */
   background: radial-gradient(
     circle at 30% 70%,
@@ -171,7 +171,7 @@ main {
 .fluid-shape-3 {
   width: 300px;
   height: 600px;
-  top: 30%;
+  top: 60%;
   left: 10%;
   /* Usamos solo blancos y un azul claro */
   background: linear-gradient(
@@ -198,12 +198,12 @@ main {
   width: 200px;
   height: 200px;
   top: 15%;
-  left: 70%;
+  left: 0%;
   /* Usamos solo blancos y un azul claro */
   background: radial-gradient(
     circle,
     var(--bg-shape-white-high-opacity) 0%,
-    var(--bg-shape-light-blue-medium-opacity) 60%,
+    var(--bg-shape-light-blue-medium-opacity) 80%,
     transparent 100%
   );
   animation-delay: -5s;
@@ -212,7 +212,7 @@ main {
 .accent-shape-2 {
   width: 150px;
   height: 150px;
-  bottom: 30%;
+  bottom: 10%;
   right: 20%;
   /* Usamos solo blancos y un azul claro */
   background: radial-gradient(
@@ -227,8 +227,8 @@ main {
 .accent-shape-3 {
   width: 180px;
   height: 180px;
-  top: 60%;
-  left: 60%;
+  top: 20%;
+  left: 80%;
   /* Usamos solo blancos y un azul claro */
   background: radial-gradient(
     circle,
@@ -403,7 +403,6 @@ main {
 .glass-card {
   background: var(--glass-card-bg);
   backdrop-filter: blur(var(--glass-card-blur));
-  border: 0.5px solid var(--glass-card-border-color);
   border-radius: var(--glass-card-border-radius);
   box-shadow: var(--glass-card-shadow);
   transition: var(--glass-card-transition);
@@ -411,7 +410,6 @@ main {
 
 .glass-card:hover {
   background: var(--glass-card-bg-hover);
-  border-color: var(--glass-card-border-hover-color);
 }
 
 /* Tarjetas Glass Morphism Secundarias */
@@ -426,7 +424,6 @@ main {
 
 .glass-card-secondary:hover {
   background: var(--glass-card-secondary-bg-hover);
-  border-color: var(--glass-card-secondary-border-hover-color);
 }
 
 /* Efecto de Texto con Gradiente */
