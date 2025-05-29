@@ -1,85 +1,316 @@
-import type React from "react"
+"use client";
+
+import type React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import {
+  ChevronsUpDown,
+  ExternalLink,
+  Github,
+  ChevronsDownUp,
+} from "lucide-react";
 
 interface Project {
-  title: string
-  description: string
-  image: string
-  tags: string[]
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  fullTechnologies: string[];
+  githubUrl: string;
+  liveUrl?: string; // Opcional
+  longDescription?: string;
 }
 
 const Projects: React.FC = () => {
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
+
   const projects: Project[] = [
     {
-      title: "Project 1",
+      title: "E-commerce Platform",
       description:
-        "A brief description of project 1. This project was about solving a complex problem using innovative techniques.",
+        "Una plataforma de comercio electrónico completa con carrito de compras, pagos y gestión de inventario.",
+      longDescription:
+        "Desarrollé una plataforma completa de e-commerce desde cero, implementando funcionalidades como autenticación de usuarios, carrito de compras persistente, integración con pasarelas de pago, panel de administración para gestión de productos y un sistema de notificaciones en tiempo real.",
       image: "./fondo.jpg",
-      tags: ["React", "Node.js", "Express", "MongoDB"],
+      tags: ["React", "Node.js", "Express"],
+      fullTechnologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Stripe API",
+        "JWT",
+        "Socket.io",
+        "Tailwind CSS",
+        "Redux Toolkit",
+      ],
+      githubUrl: "https://github.com/usuario/ecommerce-platform",
+      liveUrl: "https://ecommerce-demo.vercel.app",
     },
     {
-      title: "Project 2",
+      title: "Task Management App",
       description:
-        "A brief description of project 2. This project focused on creating a user-friendly interface for a data-intensive application.",
+        "Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real y seguimiento de progreso.",
+      longDescription:
+        "Una aplicación web para gestión de proyectos y tareas que permite a los equipos colaborar en tiempo real. Incluye funcionalidades como asignación de tareas, comentarios, archivos adjuntos, notificaciones push y reportes de productividad.",
       image: "./fondo.jpg",
-      tags: ["Python", "Django", "PostgreSQL"],
+      tags: ["Next.js", "PostgreSQL", "Prisma"],
+      fullTechnologies: [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "NextAuth.js",
+        "Pusher",
+        "Cloudinary",
+        "Vercel",
+      ],
+      githubUrl: "https://github.com/usuario/task-manager",
+      // No tiene liveUrl
     },
     {
-      title: "Project 3",
+      title: "Weather Dashboard",
       description:
-        "A brief description of project 3. The main goal was to develop a scalable and reliable system for processing large amounts of data in real-time.",
+        "Dashboard interactivo del clima con mapas, pronósticos y alertas meteorológicas personalizadas.",
+      longDescription:
+        "Un dashboard completo del clima que integra múltiples APIs meteorológicas para proporcionar información detallada del tiempo, mapas interactivos, pronósticos extendidos y un sistema de alertas personalizables basado en condiciones específicas.",
       image: "./fondo.jpg",
-      tags: ["Java", "Spring Boot", "MySQL", "AWS"],
+      tags: ["Vue.js", "Chart.js", "API"],
+      fullTechnologies: [
+        "Vue.js",
+        "Vuex",
+        "Chart.js",
+        "Leaflet",
+        "OpenWeather API",
+        "Sass",
+        "PWA",
+        "Service Workers",
+      ],
+      githubUrl: "https://github.com/usuario/weather-dashboard",
+      liveUrl: "https://weather-dashboard-demo.netlify.app",
     },
     {
-      title: "Project 4",
+      title: "Social Media Analytics",
       description:
-        "A brief description of project 4. This project involved building a mobile application with a focus on performance and user experience.",
+        "Herramienta de análisis para redes sociales con métricas avanzadas y reportes automatizados.",
+      longDescription:
+        "Plataforma de análisis que conecta con múltiples redes sociales para recopilar métricas, generar insights automáticos y crear reportes personalizados. Incluye dashboard en tiempo real y sistema de alertas para cambios significativos en las métricas.",
       image: "./fondo.jpg",
-      tags: ["React Native", "Firebase"],
+      tags: ["Python", "Django", "D3.js"],
+      fullTechnologies: [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "D3.js",
+        "Docker",
+        "AWS S3",
+        "Social Media APIs",
+      ],
+      githubUrl: "https://github.com/usuario/social-analytics",
+      // No tiene liveUrl
     },
-  ]
+  ];
+
+  const toggleExpand = (index: number) => {
+    setExpandedProject(expandedProject === index ? null : index);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 gradient-text">Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+    <section
+      id="proyectos"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
+    >
+      <motion.div
+        className="container mx-auto text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.h2
+          className="text-responsive-2xl sm:text-responsive-3xl lg:text-responsive-4xl font-semibold mb-8 sm:mb-12 lg:mb-16 gradient-text"
+          variants={titleVariants}
+        >
+          Proyectos
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 relative pb-3">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="glass-card overflow-hidden h-80 sm:h-96 w-full flex flex-col hover:transform hover:scale-105 transition-all duration-300"
+              className="glass-card overflow-hidden w-full flex flex-col transition-all duration-300"
+              custom={index}
+              whileHover={{
+                scale: 1,
+                y: -10,
+                transition: { duration: 0.3 },
+              }}
             >
-              <div className="h-32 sm:h-48 overflow-hidden flex-shrink-0">
-                <img
+              <div className="h-40 sm:h-48 overflow-hidden flex-shrink-0">
+                <motion.img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
                 />
               </div>
-              <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 line-clamp-2">{project.title}</h3>
-                  <p className="text-gray-400 mb-3 sm:mb-4 line-clamp-3 text-xs sm:text-sm leading-relaxed">
-                    {project.description}
-                  </p>
+
+              <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                <div className="flex justify-between items-start mb-3">
+                  <motion.h3
+                    className="text-responsive-lg sm:text-responsive-xl font-bold line-clamp-2 flex-1"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <motion.button
+                    onClick={() => toggleExpand(index)}
+                    className="ml-2 p-2 rounded-full hover:bg-white/10 transition-colors duration-200 flex-shrink-0"
+                    aria-label="Expandir proyecto"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <ChevronsUpDown size={20} className="text-gray-400" />
+                  </motion.button>
                 </div>
-                <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-2 sm:px-3 py-1 glass-card-secondary text-xs sm:text-sm rounded-full text-white"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+
+                <motion.p
+                  className="text-gray-400 mb-4 text-responsive-xs sm:text-responsive-sm leading-relaxed line-clamp-3 pb-3"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  {project.description}
+                </motion.p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
-    </section>
-  )
-}
+      </motion.div>
+  {/* Modal expandido centrado - SIN PARPADEO */}
+      <AnimatePresence mode="sync">
+        {expandedProject !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 , ease: "easeIn"}}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setExpandedProject(null)}
+          >
+            <motion.div
+              layout
+              initial={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 2, ease: "easeIn" }}
+              className="glass-card w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header con imagen */}
+              <div className="relative h-48 sm:h-64 overflow-hidden flex-shrink-0">
+                <img
+                  src={projects[expandedProject].image || "/placeholder.svg"}
+                  alt={projects[expandedProject].title}
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setExpandedProject(null)}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors duration-200 hover:scale-110"
+                >
+                  <ChevronsDownUp size={20} />
+                </button>
+              </div>
 
-export default Projects
+              {/* Contenido scrolleable */}
+              <div className="p-6 sm:p-8 flex-1 overflow-y-auto">
+                <div className="opacity-100">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
+                    {projects[expandedProject].title}
+                  </h3>
+
+                  <p className="text-gray-300 mb-6 text-sm sm:text-base leading-relaxed">
+                    {projects[expandedProject].longDescription}
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-white mb-3">
+                      Tecnologías utilizadas:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {projects[expandedProject].fullTechnologies.map(
+                        (tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-3 py-2 glass-card-secondary text-sm rounded-full text-white hover:scale-105 transition-transform duration-200"
+                          >
+                            {tech}
+                          </span>
+                        )
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={projects[expandedProject].githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-6 py-3 bg-white hover:bg-black hover:text-white  text-black text-sm rounded-lg transition-all duration-200 hover:scale-105"
+                    >
+                      <Github size={18} className="mr-2" />
+                      Ver Código
+                    </a>
+
+                    {projects[expandedProject].liveUrl && (
+                      <a
+                        href={projects[expandedProject].liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-6 py-3 bg-white hover:bg-black hover:text-white  text-black text-sm rounded-lg transition-all duration-200 hover:scale-105"
+                      >
+                        <ExternalLink size={18} className="mr-2" />
+                        Ver Demo en Vivo
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
+
+export default Projects;

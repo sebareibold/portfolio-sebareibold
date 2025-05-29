@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import "./Services.css"
+import { motion } from "framer-motion";
+import "./Services.css";
 
 //Swiper
-import { Mousewheel, Pagination, Autoplay, FreeMode } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/free-mode"
-import "swiper/css/autoplay"
+import { Mousewheel, Pagination, Autoplay, FreeMode } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/autoplay";
 
 const services = [
   {
@@ -19,66 +19,103 @@ const services = [
   },
   {
     title: "Desarrollo Web Backend",
-    description: "Implementación de APIs RESTful, bases de datos y lógica de servidor con Node.js, Express y MongoDB.",
+    description:
+      "Implementación de APIs RESTful, bases de datos y lógica de servidor con Node.js, Express y MongoDB.",
   },
   {
     title: "Desarrollo de Aplicaciones Móviles",
-    description: "Desarrollo de aplicaciones nativas y multiplataforma para iOS y Android utilizando React Native.",
+    description:
+      "Desarrollo de aplicaciones nativas y multiplataforma para iOS y Android utilizando React Native.",
   },
   {
     title: "Consultoría Técnica",
     description:
       "Asesoramiento en arquitectura de software, optimización de rendimiento y mejores prácticas de desarrollo.",
   },
-]
+];
 
 const Services = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const leftVariants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const rightVariants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cardHoverVariants = {
+    hover: {
+      scale: 1.02,
+      y: -5,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto custom-card">
-        <div className="flex h-full flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="container mx-auto custom-card"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="flex h-full flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-12">
           <motion.div
-            className="w-full lg:w-1/2 custom-servicios"
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
+            className="w-full lg:w-1/2 custom-servicios flex flex-col justify-center items-center"
+            variants={leftVariants}
           >
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-center lg:text-left">
-              Servicios brindados
-            </h3>
-            <div className="block lg:hidden">
-              <p className="text-sm sm:text-base text-gray-300 text-center">Desliza para ver todos los servicios</p>
-            </div>
+            <motion.h3 
+              className="text-responsive-2xl sm:text-responsive-3xl lg:text-responsive-4xl font-bold text-center lg:text-left gradient-text mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Servicios
+            </motion.h3>
+            <motion.h4 
+              className="text-responsive-lg sm:text-responsive-xl lg:text-responsive-2xl font-light text-gray-300 text-center lg:text-left"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              Soluciones tecnológicas completas
+            </motion.h4>
           </motion.div>
 
           <motion.div
-            className="relative w-full lg:w-1/2 h-64 sm:h-80 lg:h-full mt-6 lg:mt-0"
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.2,
-            }}
+            className="relative w-full lg:w-1/2 h-80 sm:h-96 lg:h-full mt-6 lg:mt-0"
+            variants={rightVariants}
           >
             <div className="relative rounded-xl h-full w-full max-w-lg mx-auto">
               <Swiper
@@ -98,36 +135,41 @@ const Services = () => {
               >
                 {services.map((service, index) => (
                   <SwiperSlide key={index}>
-                    <div className="custom-slide-servicio">
-                      <div className="p-4 sm:p-6">
-                        <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 text-white">
+                    <motion.div 
+                      className="custom-slide-servicio bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300"
+                      variants={cardHoverVariants}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <div className="p-6 sm:p-8">
+                        <motion.h4 
+                          className="text-responsive-base sm:text-responsive-lg lg:text-responsive-xl font-bold mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-red-500 to-yellow-500"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                        >
                           {service.title}
-                        </h4>
-                        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{service.description}</p>
+                        </motion.h4>
+                        <motion.p 
+                          className="text-responsive-sm sm:text-responsive-base text-gray-300 leading-relaxed tracking-wide"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4 }}
+                        >
+                          {service.description}
+                        </motion.p>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-                {/* Duplicamos para el loop infinito */}
-                {services.map((service, index) => (
-                  <SwiperSlide key={`duplicate-${index}`}>
-                    <div className="custom-slide-servicio">
-                      <div className="p-4 sm:p-6">
-                        <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 text-white">
-                          {service.title}
-                        </h4>
-                        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{service.description}</p>
-                      </div>
-                    </div>
+                    </motion.div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

@@ -85,7 +85,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
           whileHover={{
             scale: 1.2,
             rotate: Math.random() > 0.5 ? 5 : -5,
-            color: ["#ffffff", "#00ffff", "#ff00ff", "#ffff00", "#ffffff"],
+            color: ["#ffffff", "#e0e0e0", "#e0e0e0", "#e0e0e0", "#ffffff"],
             textShadow: [
               "0 0 5px rgba(255,255,255,0.3)",
               "0 0 5px #00ffff",

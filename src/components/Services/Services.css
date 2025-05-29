@@ -61,9 +61,9 @@
     min-height: 140px;
   }
 }
+
 .custom-slide-servicio:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+  transform: scale(0.9);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.18);
 }

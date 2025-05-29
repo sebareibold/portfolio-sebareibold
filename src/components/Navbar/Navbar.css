@@ -28,10 +28,6 @@
   transition: all 0.3s ease;
 }
 
-.custom-text-navbar:hover {
-  color: var(--txt-sg-color);
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
-}
 
 @media (min-width: 640px) {
   .custom-text-navbar {
